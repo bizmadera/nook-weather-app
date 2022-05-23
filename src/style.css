@@ -1,0 +1,214 @@
+body {
+  background-color: #8071ae;
+}
+
+h1 {
+  color: #716656;
+  font-family: "Palanquin Dark", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  color: #716656;
+  font-family: "Poppin", sans-serif;
+  text-align: left;
+  padding: 0px 20px;
+}
+
+h3 {
+  color: #716656;
+  font-family: "Palanquin Dark", sans-serif;
+  text-align: right;
+}
+
+h4 {
+  color: #716656;
+  font-family: "Poppin", sans-serif;
+  font-size: 15px;
+  text-align: right;
+}
+
+p {
+  font-family: "Poppin", sans-serif;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #716656;
+}
+
+a:hover {
+  color: #81c9b9;
+}
+
+.card-body {
+  margin: 10px 10px 0px 10px;
+  display: block;
+}
+
+.top-bar {
+  display: block;
+  margin: 0 auto;
+  color: #b8b4a3;
+}
+
+.signal {
+  display: inline;
+  font-size: 25px;
+}
+
+.time {
+  display: inline;
+  font-family: "Poppin", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.location {
+  display: inline;
+  font-size: 25px;
+}
+
+.location:hover {
+  color: #81c9b9;
+}
+
+.search-bar {
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-app {
+  background-color: #f7f6e6;
+  border-radius: 120px;
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.city-name {
+  text-align: left;
+  font-size: 50px;
+}
+
+.temperature-now-icon-border {
+  border-radius: 70px;
+  background-color: #82d5ba;
+  width: 100;
+}
+
+.temperature-now-icon {
+  color: #f7f6e6;
+  display: block;
+  text-align: center;
+  font-size: 70px;
+  padding: 60px 0px;
+  margin: 10px 10px;
+  border-radius: 70px;
+  width: 100%;
+  background-color: #82d5ba;
+}
+
+.temperature-now {
+  font-size: 60px;
+  text-align: right;
+  display: block;
+  margin: 0 auto;
+}
+
+.units {
+  text-align: right;
+  font-size: 20px;
+}
+
+.footer {
+  font-family: "Poppin", sans-serif;
+  color: #b8b4a3;
+}
+
+.card-footer {
+  padding: 40px 40px 70px 40px;
+}
+
+.other-days {
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 20px;
+  margin: 0px 0px 20px 0px;
+}
+
+.other-weather-icons {
+  margin: 20px -80px;
+  font-size: 40px;
+}
+
+.border-one {
+  background-color: #df84a6;
+  border-radius: 40px;
+  display: block;
+}
+
+.day-one {
+  color: #be4d79;
+}
+
+.border-two {
+  background-color: #81c9b9;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.day-two {
+  color: #31906a;
+}
+
+.border-three {
+  background-color: #f8d775;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.day-three {
+  color: #ec9765;
+}
+
+.border-four {
+  background-color: #ff807d;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.day-four {
+  color: #b7594e;
+}
+
+.border-five {
+  background-color: #b498c6;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.day-five {
+  color: #8071ae;
+}
+
+.border-six {
+  background-color: #8bc7c8;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.day-six {
+  color: #4596b5;
+}
