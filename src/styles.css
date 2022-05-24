@@ -32,6 +32,8 @@ h4 {
 p {
   font-family: "Poppin", sans-serif;
   display: inline;
+  color: #716656;
+  text-align: center;
 }
 
 a {
@@ -211,4 +213,7 @@ a:hover {
 
 .day-six {
   color: #4596b5;
+}
+.github-link{
+  text-align: center;
 }
