@@ -9,7 +9,9 @@
     <script src="https://kit.fontawesome.com/37d8eee4ff.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@500&family=Poppins:wght@400;500&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Palanquin+Dark:wght@500&family=Poppins:wght@400;500&family=Rubik+Bubbles&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/styles.css"/>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -41,155 +43,54 @@
             <h1>
                 Nook Weather App
             </h1>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="weather-app-bottom">
-
-        </div>
-
-    </div>
-    <div class="card weather-app">
-        <div class="card-body">
-            <div class="container text-center top-bar">
-                <div class="row">
-                    <div class="col">
-                        <span class="signal">
-                            <i class="fa-solid fa-signal"></i>
-                        </span>
-                    </div>
-                    <div class="col">
-                        <span class="time" id="current-time">
-                            
-                        </span>
-                    </div>
-                    <div class="col">
-                        <span class="location" id="geolocation">
-                            <span id="switch"> off </span>
-                            <i class="fa-solid fa-location-dot"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            
-            <h1>Nook Weather App</h1>
             <form class="input-group mb-3" id="search-form">
                 <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input" class="form-control">
                 <input type="submit" class="btn btn-outline-secondary" value="Search" id="search-submit">
             </form>
-            <h1 class="card-title city-name">
+            <h1 class="city-name">
                 City Name
             </h1>
-            <h2 class="card-title date" id="current-date"> </h2>
-            <h2 class="card-title" id="description">  </h2>
-            <div>
-                <div class="row">
-                    <div class="col-6">
-                        <span 
-                            <i class="fa-solid fa-cloud temperature-now-icon"></i>
-                        </span>  
-                    </div>
-                    <div class="col-6">
-                    </br>
-                        <h3 class="temperature-now">
+            <h2> 
+                <span id="current-date">
+                    May 25
+                </span>
+                <span class="rounded-border" id="current-day">
+                    Mon.
+                </span>
+            </h2>
+            <div class="row">
+                <div class="col-7 temperature-now-icon">
+                    <img src="img/cloudy.png" width="100%">
+                    <h2 class="rounded-border" id="description">  
+                        few clouds
+                    </h2>
+                </div>
+                <div class="col-5">
+                    <h3 id="temperature-now">
+                        33°C
+                    </h3>
+                    <div class="units">
+                        <a href=# id="celsius-link"> 
                             °C
-                        </h3>
-                        <h2 class="units">
-                            <a href=# id="celsius-link"> °C </a>
-                                    |
-                            <a href=# id="fahrenheit-link"> °F </a>
-                        </h2>
-                        <h4 id="humidity"> </h4>
-                        <h4 id="windspeed"> </h4>
+                        </a>
+                        |
+                        <a href=# id="fahrenheit-link"> 
+                            °F 
+                        </a>
                     </div>
+                    <h4 id="humidity"> </h4>
+                    <h4 id="windspeed"> </h4>
                 </div>
-            </br>
-        <div class="card-footer text-center text-muted footer">
-            <div>
-                <div class="row">
-                    <div class="col other-days">
-                        Thurs
-                    </div>
-                    <div class="col other-days">
-                        Fri
-                    </div>
-                    <div class="col other-days">
-                        Sat
-                    </div>
-                    <div class="col other-days">
-                        Sun
-                    </div>
-                    <div class="col other-days">
-                        Mon
-                    </div>
-                    <div class="col other-days">
-                        Tues
-                    </div>
-                </div>
-            <div>
-                <div class="row">
-                    <div class="col card border-one">
-                        <div class="card-body cardd">
-                            <i class="fa-solid fa-cloud-rain other-weather-icons day-one"></i>
-                        </div>
-                    </div>
-                    <div class="col card border-two">
-                        <div class="card-body">
-                            <i class="fa-solid fa-cloud other-weather-icons day-two"></i>
-                        </div>
-                    </div>
-                    <div class="col card border-three">
-                        <div class="card-body">
-                            <i class="fa-solid fa-cloud other-weather-icons day-three"></i>
-                        </div>
-                    </div>
-                    <div class="col card border-four">
-                        <div class="card-body">
-                            <i class="fa-solid fa-sun other-weather-icons day-four"></i>
-                        </div>
-                    </div>
-                    <div class="col card border-five">
-                        <div class="card-body">
-                            <i class="fa-solid fa-cloud other-weather-icons day-five"></i>
-                        </div>
-                    </div>
-                    <div class="col card border-six">
-                        <div class="card-body">
-                            <i class="fa-solid fa-sun other-weather-icons day-six"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
-    </div>
-    <div class="github-link">
+        <div class="github-link">
             <a href="https://github.com/bizmadera/nook-weather-app">
                 Open-source code
             </a>
             <p>
                 by Brianna Madera
             </p>
-            
-    </div>
+        </div>
     <script src = "src/index.js">  </script>
 </body>
 </html>
