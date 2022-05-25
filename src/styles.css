@@ -44,23 +44,28 @@ a {
 a:hover {
   color: #81c9b9;
 }
-
-.card-body {
-  margin: 10px 10px 0px 10px;
-  display: block;
+.weather-app-top {
+  background-color: #F7F6E5;
+  border: 2px solid;
+  border-color: #71BFEE;
+  border-radius: 100px 100px 0px 0px;
+  padding: 30px 10px 10px 10px;
+  margin: 20px 0px;
+  text-align: center;
 }
 
-.top-bar {
+.status-bar {
   display: block;
   margin: 0 auto;
   color: #b8b4a3;
 }
-
-.signal {
+.top-bar-icons{
   display: inline;
   font-size: 25px;
 }
-
+.top-bar-icons:hover {
+  color: #81c9b9;
+}
 .time {
   display: inline;
   font-family: "Poppin", sans-serif;
@@ -68,14 +73,6 @@ a:hover {
   font-weight: 500;
 }
 
-.location {
-  display: inline;
-  font-size: 25px;
-}
-
-.location:hover {
-  color: #81c9b9;
-}
 
 .search-bar {
   display: block;
