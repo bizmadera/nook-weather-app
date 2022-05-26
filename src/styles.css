@@ -123,12 +123,26 @@ a:hover {
   border: 2px solid;
   border-color: #f7f6e5;
   border-radius: 0px 0px 100px 100px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 20px 10px 20px;
   margin: 0px 0px 20px 0px;
   text-align: center;
 }
-
-
+.forecasted-weather-icon {
+  display: block;
+  margin: 0 auto;
+  text-align:center;
+}
+.day{
+  font-family: "Nunito", sans-serif;
+}
+.forecasted-weather-temperature {
+  font-size: 18px;
+  font-family: "Palanquin Dark", sans-serif;
+  color: #716656;
+}
+.forecased-weather-temperature-min {
+  opacity: 0.5;
+}
 .footer {
   font-family: "Poppin", sans-serif;
   color: #b8b4a3;
@@ -221,4 +235,5 @@ a:hover {
 
 .github-link {
   text-align: center;
+  margin: 30px 10px;
 }
