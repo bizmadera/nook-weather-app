@@ -53,6 +53,8 @@ function showTemperature(response) {
   let windspeed = response.data.wind.speed;
   let windNow = document.querySelector("#windspeed");
   windNow.innerHTML = `Wind: ${windspeed} km/h`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `img/${description}.png`);
 }
 
 function showCity(event) {

@@ -99,6 +99,9 @@ a:hover {
   border-radius: 200px;
   text-align: center;
 }
+.description{
+  text-transform: capitalize;
+}
 
 .temperature-now-icon {
   display: block;
