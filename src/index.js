@@ -36,12 +36,15 @@ currentDate.innerText = `${month} ${date}`;
 let currentDay = document.querySelector("#current-day");
 currentDay.innerHTML = `${day}`;
 
+let celsiusTemperature = null;
+
 function showTemperature(response) {
   console.log(response);
   let city = response.data.name;
   let currentCity = document.querySelector("h1.city-name");
   currentCity.innerHTML = `${city}`;
   let temp = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let temperatureNow = document.querySelector("#temperature-now");
   temperatureNow.innerHTML = `${temp}°C`;
   let description = response.data.weather[0].description;
@@ -89,7 +92,7 @@ geolocation.addEventListener("click", handlePosition);
 function showCelsiusUnits(event) {
   event.preventDefault();
   let temperatureNow = document.querySelector("#temperature-now");
-  temperatureNow.innerText = `19°C`;
+  temperatureNow.innerText = `${celsiusTemperature}°C`;
 }
 
 let celsiusUnits = document.querySelector("#celsius-link");
@@ -97,8 +100,10 @@ celsiusUnits.addEventListener("click", showCelsiusUnits);
 
 function showFahrenheitUnits(event) {
   event.preventDefault();
+  let fahrenheitTemerature = Math.round((celsiusTemperature * 9) / 5 + 32);
   let temperatureNow = document.querySelector("#temperature-now");
-  temperatureNow.innerText = `66°F`;
+  temperatureNow.innerText = `${fahrenheitTemerature}°F`;
 }
 let fahrenheitUnits = document.querySelector("#fahrenheit-link");
 fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
+
