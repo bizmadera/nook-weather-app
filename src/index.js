@@ -41,7 +41,7 @@ let celsiusTemperature = null;
 function getForecast(coordinates){
   console.log(coordinates);
   let apiKey = `76f96a93beeb1a74b7f32846e978f838`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showForecast);
 };
@@ -70,34 +70,41 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, `Sun`];
+  return(days[day]);
+}
+
 function showForecast(response) {
-  console.log(response.data.daily[1].weather[0].description);
+  let forecast = (response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
-  let days = [`Thu`, `Fri`, `Sat`];
-  days.forEach(function(day) {
+  console.log(forecast);
+  forecast.forEach(function(forecastDay, index) {
+  if (index < 3) {
   forecastHTML = forecastHTML +
   `<div class="col-4">
       <div class="day rounded-border">
-        ${day}.
+        ${formatDay(forecastDay.dt)}.
       </div>
       <div class="forecasted-weather-icon">
-        <img id="forecasted-weather-icon" src="img/${response.data.daily[0].weather[0].description}.png" width="100%">
+        <img id="forecasted-weather-icon" src="img/${forecastDay.weather[0].description}.png" width="100%">
       </div>
       <div class="forecasted-weather-temperature">
         <span class="forecased-weather-temperature-max">
-          22°
+          ${Math.round(forecastDay.temp.max)}°
         </span>
         <span class="forecased-weather-temperature-min">
-          18°
+          ${Math.round(forecastDay.temp.min)}
         </span>
       </div>
     </div>
-  `;
+  `;}
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  
 };
 
 function showCity(event) {
@@ -143,6 +150,7 @@ function showFahrenheitUnits(event) {
   let fahrenheitTemerature = Math.round((celsiusTemperature * 9) / 5 + 32);
   let temperatureNow = document.querySelector("#temperature-now");
   temperatureNow.innerText = `${fahrenheitTemerature}°F`;
+
 }
 let fahrenheitUnits = document.querySelector("#fahrenheit-link");
 fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
