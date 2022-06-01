@@ -60,6 +60,35 @@ function showTemperature(response) {
   icon.setAttribute("src", `img/${description}.png`);
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = [`Thu`, `Fri`, `Sat`];
+  days.forEach(function(day) {
+  forecastHTML = forecastHTML +
+  `<div class="col-4">
+      <div class="day rounded-border">
+        ${day}.
+      </div>
+      <div class="forecasted-weather-icon">
+        <img id="forecasted-weather-icon" src="img/clear sky.png" width="100%">
+      </div>
+      <div class="forecasted-weather-temperature">
+        <span class="forecased-weather-temperature-max">
+          22°
+        </span>
+        <span class="forecased-weather-temperature-min">
+          18°
+        </span>
+      </div>
+    </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  
+};
+
 function showCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
@@ -107,3 +136,4 @@ function showFahrenheitUnits(event) {
 let fahrenheitUnits = document.querySelector("#fahrenheit-link");
 fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
 
+showForecast();
