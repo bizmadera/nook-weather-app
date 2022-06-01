@@ -38,6 +38,14 @@ currentDay.innerHTML = `${day}`;
 
 let celsiusTemperature = null;
 
+function getForecast(coordinates){
+  console.log(coordinates);
+  let apiKey = `76f96a93beeb1a74b7f32846e978f838`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+};
+
 function showTemperature(response) {
   console.log(response);
   let city = response.data.name;
@@ -58,9 +66,12 @@ function showTemperature(response) {
   windNow.innerHTML = `Wind: ${windspeed} km/h`;
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `img/${description}.png`);
+
+  getForecast(response.data.coord);
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily[1].weather[0].description);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
   let days = [`Thu`, `Fri`, `Sat`];
@@ -71,7 +82,7 @@ function showForecast() {
         ${day}.
       </div>
       <div class="forecasted-weather-icon">
-        <img id="forecasted-weather-icon" src="img/clear sky.png" width="100%">
+        <img id="forecasted-weather-icon" src="img/${response.data.daily[0].weather[0].description}.png" width="100%">
       </div>
       <div class="forecasted-weather-temperature">
         <span class="forecased-weather-temperature-max">
@@ -136,4 +147,4 @@ function showFahrenheitUnits(event) {
 let fahrenheitUnits = document.querySelector("#fahrenheit-link");
 fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
 
-showForecast();
+
